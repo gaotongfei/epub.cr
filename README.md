@@ -1,6 +1,6 @@
 # epub
 
-TODO: Write a description here
+A Crystal shards for parsing epub metadata.
 
 ## Installation
 
@@ -8,7 +8,7 @@ TODO: Write a description here
 ```yaml
 dependencies:
   epub:
-    github: your-github-user/epub
+    github: gaotongfei/epub
 ```
 2. Run `shards install`
 
@@ -18,15 +18,21 @@ dependencies:
 require "epub"
 ```
 
-TODO: Write usage instructions here
+### Parsing Metadata
 
-## Development
-
-TODO: Write development instructions here
+```crystal
+doc = Epub::Document.new("/path/to/your.epub")
+metadata = doc.metadata
+metadata["identifier"]  # => "code.google.com.epub-samples.wasteland-basic"
+metadata["title"]  # => "The Waste Land"
+metadata["language"]  # => "en-US"
+metadata["date"]  # => "2011-09-01"
+metadata["rights"]  # => "This work is shared with ..."
+```
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/epub/fork>)
+1. Fork it (<https://github.com/gaotongfei/epub/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -34,4 +40,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [gaotongfei](https://github.com/your-github-user) - creator and maintainer
+- [gaotongfei](https://github.com/gaotongfei) - creator and maintainer
