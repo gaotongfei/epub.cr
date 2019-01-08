@@ -3,6 +3,7 @@ module Epub
     getter path : String
 
     def initialize(@path : String)
+      @path = Epub::FileUtils.unzip(@path) if File.file?(@path)
     end
 
     def metadata
